@@ -1,10 +1,11 @@
+from collections import Counter
+
 class Solution:
     def findLonely(self, nums: list[int]) -> list[int]:
-        freq={}
+        d = Counter(nums)
+        a = []
         for x in nums:
-            freq[x] = freq.get(x, 0)+1
-        a=[]
-        for x in nums:
-            if freq[x] == 1 and x-1 not in freq and x+1 not in freq:
+            if d[x] == 1 and x-1 not in d and x+1 not in d:
                 a.append(x)
+
         return a
