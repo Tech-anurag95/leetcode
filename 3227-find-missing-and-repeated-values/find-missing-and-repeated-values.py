@@ -16,6 +16,5 @@ class Solution:
         expected=sum(range(1,n*n+1))
         missing=expected-(total-repeated)
         ans.append(missing)
-
         return ans
 
