@@ -9,12 +9,16 @@ class Solution:
         curr=head
         while curr:
             a.append(curr.val)
-            curr=curr.next   #array bna diye linked list se 
+            curr=curr.next
         ans=[0]*len(a)
         stack=[]
         for i in range(len(a)):
-            while stack and a[i]>a[stack[-1]]:  #if the stack is not none and current element is greater than the top of the stack which will be the next largest element
-                ans[stack.pop()]=a[i]
+            while stack:
+                if a[i]>a[stack[-1]]:
+                    index=stack.pop()
+                    ans[index]=a[i]
+                else:
+                    break
             stack.append(i)
         return ans
         
