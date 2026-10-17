@@ -1,6 +1,6 @@
 from collections import deque
 class Solution:
-    def addOneRow(self, root:Optional[TreeNode], val:int,depth:int)-> Optional[TreeNode]:
+    def addOneRow(self,root:Optional[TreeNode],val:int,depth:int)->Optional[TreeNode]:
         if depth==1:
             newroot=TreeNode(val)
             newroot.left=root
@@ -19,11 +19,11 @@ class Solution:
                     curr.left.left=agla1
                     curr.right.right=agla2
                 break
-            for i in range(size):
+            for i in range(size):    #if abhi!=depth-1 then move to the next level
                 curr=queue.popleft()
                 if curr.left:
                     queue.append(curr.left)
                 if curr.right:
                     queue.append(curr.right)
-            abhi+=1
+            abhi+=1   #increment abhi 
         return root
