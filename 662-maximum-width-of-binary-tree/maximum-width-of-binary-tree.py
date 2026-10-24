@@ -7,11 +7,11 @@
 class Solution:
     def widthOfBinaryTree(self, root: TreeNode | None) -> int:
         if root==None:
-            return 0
-        queue=deque([(root,0)])  #we will store node,index pair 
-        ans=0
+            return
+        queue=deque([(root,0)])  
+        ans=0 
         while queue:
-            size=len(queue)
+            size=len(queue)    
             first=queue[0][1]
             last=queue[-1][1]
             ans=max(ans,last-first+1)
@@ -22,7 +22,6 @@ class Solution:
                 if node.right:
                     queue.append((node.right,2*index+1))
         return ans
-
 
         # first=queue[0][1] this is index of first node 
         # last=queue[-1][1] this is index of second node
