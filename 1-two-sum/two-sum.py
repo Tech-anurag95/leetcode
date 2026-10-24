@@ -1,10 +1,10 @@
 from typing import List
-
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+    def twoSum(self,nums:List[int],target: int) ->List[int]:
+        dic={}
         for i in range(len(nums)):
-           x=target-nums[i]
-           if x in nums[:i]:
-             return [nums.index(x),i]
-           if x in nums[i+1:]:
-             return [i,nums.index(x,i+1)]
+            complement=target-nums[i]
+            if complement in dic:
+                return [dic[complement],i]
+            dic[nums[i]]=i
+        
