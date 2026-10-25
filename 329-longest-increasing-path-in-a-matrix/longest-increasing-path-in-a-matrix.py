@@ -4,8 +4,8 @@ class Solution:
         n=len(matrix[0])
         visited={}
         def increasing(x,y):
-            if (x,y) in visited:
-                return visited[(x,y)]
+            if (x,y) in visited:  #phir se same starting cell pe aagye
+                return visited[(x,y)]   #uss cell se start hone wali longest length path ko return kr do 
             up=0
             down=0
             left=0
@@ -20,8 +20,8 @@ class Solution:
                 right=increasing(x,y+1)
             count=1+max(up,down,left,right)
             visited[(x,y)]=count     #uss index se start hone wali longest length 
-            return count
-        ans=0         
+            return count  
+        ans=0
         for i in range(m):
             for j in range(n):
                 length=increasing(i,j)
