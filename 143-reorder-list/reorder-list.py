@@ -1,4 +1,4 @@
-from collections import deque
+
 class Solution:
     def reorderList(self,head:ListNode|None)->None:
         if not head:
