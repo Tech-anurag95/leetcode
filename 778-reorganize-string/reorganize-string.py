@@ -8,13 +8,13 @@ class Solution:
             placed=False
             count=dict(sorted(count.items(),key=lambda x:x[1],reverse=True))
             for key,value in count.items():
-                if key==prev or value==0:
+                if value==0 or key==prev:
                     continue
                 ns+=key
                 count[key]-=1
-                prev=key
+                prev=ns[-1]
                 placed=True
                 break
             if not placed:
                 return ""
-        return ns
+        return ns 
