@@ -11,4 +11,15 @@ class Solution:
         return -sum(piles)
 # max heap me max element at top
 # min heap me min element at top
-# find the max number then make it num//2 then push back in heap 
+# find the max number then make it num//2 then push back in heap
+
+#BRUTE FORCE
+# import heapq
+# class Solution:
+#     def minStoneSum(self, piles: list[int], k: int) -> int:
+#         for i in range(k):
+#             piles.sort()
+#             piles[-1]-=(piles[-1]//2)
+#         return sum(piles)
+        
+
