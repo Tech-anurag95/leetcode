@@ -12,32 +12,43 @@ class Solution:
             curr=curr.next
         size=length//k
         extra=length%k
-        curr=0
         ans=[]
-        current=head
-        while curr<extra:
-            elements=0
-            abhi=current
-            while elements<size+1:
-                prev=current
-                current=current.next
-                elements+=1
-            prev.next=None
+        start=0
+        while start<extra:
+            curr=head
+            abhi=curr
+            count=1
+            while count<size+1:
+                curr=curr.next
+                count+=1
+            head=curr.next
+            curr.next=None
             ans.append(abhi)
-            curr+=1
-        curr=0
-        while curr<k-extra:
-            elements=0
-            abhi=current
-            while elements<size:
-                prev=current
-                current=current.next
-                elements+=1
-            if elements>0:
-                prev.next=None
+            start+=1
+        start=0
+        while start<(k-extra):
+            if size==0:
+                ans.append(None)
+                start+=1
+                continue
+            curr=head
+            abhi=curr
+            count=1
+            while count<size:
+                curr=curr.next
+                count+=1
+
+            head=curr.next
+            curr.next=None
             ans.append(abhi)
-            curr+=1
+            start+=1
         return ans
+        
+        
+            
+        
+
+
         
             
 
