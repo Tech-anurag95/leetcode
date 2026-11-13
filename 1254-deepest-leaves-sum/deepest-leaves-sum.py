@@ -6,6 +6,8 @@
 #         self.right = right
 class Solution:
     def deepestLeavesSum(self, root: TreeNode | None) -> int:
+        if not root:
+            return 0
         queue=deque([root])
         ans=[]
         while queue:
