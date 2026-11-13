@@ -18,9 +18,9 @@ class Solution:
                 queue.append(node.right)
         if None in ans:
             idx=ans.index(None)
-            for i in range(idx,len(ans)):
-                if ans[i]!=None:
-                    return False
+        for i in range(idx,len(ans)):
+            if ans[i]!=None:
+                return False
         return True
 
         
