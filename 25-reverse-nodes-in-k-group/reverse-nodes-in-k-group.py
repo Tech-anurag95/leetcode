@@ -4,8 +4,8 @@ class Solution:
         dummy.next=head
         phla=dummy
         def reverse(start):
-            curr=start
             prev=None
+            curr=start
             while curr:
                 agla=curr.next
                 curr.next=prev
@@ -16,7 +16,7 @@ class Solution:
             num=1
             start=phla.next
             curr=start
-            while num<k and curr:
+            while curr and num<k:
                 curr=curr.next
                 num+=1
             if not curr:
@@ -28,12 +28,9 @@ class Solution:
             start.next=agla
             phla=start
         return dummy.next
+        
 
 
-# find the segment 
-# reverse it 
-# start se reversed wale ke start ko jodo
-# reversed ke end ko original ke start se jodo (start.next=agla)
-# restart kro (phla =start)
+
                  
 
