@@ -9,7 +9,7 @@ class Solution:
             size=len(queue)
             for i in range(size):
                 node=queue.popleft()
-                if i==size-1:
+                if i==size-1:   #only the last element will be added in answer
                     ans.append(node.val)
                 if node.left:
                     queue.append(node.left)
