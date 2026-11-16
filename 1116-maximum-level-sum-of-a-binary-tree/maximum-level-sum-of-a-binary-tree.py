@@ -20,3 +20,6 @@ class Solution:
                 maxlevel=level
             level+=1
         return maxlevel
+
+
+        #level order traversal + current level checking 
