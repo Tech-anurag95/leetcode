@@ -1,6 +1,6 @@
 class Solution:
     def wordSubsets(self, words1: list[str], words2: list[str]) -> list[str]:
-        dic={}
+        dic={}  #isme word2 ke har alphabet ki max freq
         for word in words2:
             curr={}
             for ch in word:
@@ -14,9 +14,15 @@ class Solution:
                 curr[ch]=curr.get(ch,0)+1
             flag=True
             for ch in dic:
-                if dic[ch]>curr.get(ch,0):
+                if dic.get(ch,0)>curr.get(ch,0):
                     flag=False
                     break
             if flag:
                 ans.append(word)
-        return ans
+        return ans 
+
+
+            
+
+
+
